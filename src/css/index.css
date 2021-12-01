@@ -1,3 +1,4 @@
+/* index.html */
 body{
     margin: 0px;
     padding: 0px;
@@ -5,13 +6,12 @@ body{
     width: 100vw;
 
 }
-
-/* Partie menu navigation partager */
-.field{
-    margin-top: 10vh;
-    height: 90vh;
-    width: auto;
+.menu{
+    border: 2px solid black;
+    width: 200px;
+    height: 80vh;
 }
+
 .navv > a {
     text-decoration: none;
     color: black;
@@ -27,18 +27,4 @@ body{
 }
 .nav{
     list-style: none;
-}
-
-/* Page account only */
-/*  */
-.container{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.contenu{
-    display: flex;
-    width: calc(100% - 200px);
-    flex-direction: column;
-
 }
