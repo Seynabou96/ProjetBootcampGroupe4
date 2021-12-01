@@ -4,8 +4,9 @@ import { List } from "./lib/module";
 const inputAccount = document.querySelector('#int');
 const buttonAccount = document.querySelector('#btn');
 const input = document.querySelector('#label');
-const combobox = document.querySelector('#ComboBox')
-console.log(input,combobox)
+const combobox = document.querySelector('#ComboBox');
+const table = document.querySelector('#tbl');
+console.log(input,combobox);
 const comptes = new List();
 const onClick = (len,e) =>{
 
@@ -16,8 +17,8 @@ const onClick = (len,e) =>{
              if (comptes._list.indexOf(e) === -1) {
                 comptes.addElementToList(e);
                 window.localStorage.store = comptes._list;
-               console.log('Le nouveau tableau est : ' + comptes._list);
-                const table = document.querySelector('#tbl');
+                console.log('Le nouveau tableau est : ' + comptes._list);
+               
                 console.log(comptes);
                 console.log(comptes._list.indexOf(e))
                 let rowCount = table.rows.length;
