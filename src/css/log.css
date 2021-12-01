@@ -42,3 +42,16 @@ body{
     flex-direction: column;
 
 }
+.inserer{
+    border: 2px solid red;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+.inserer > fieldset{
+    margin: auto;
+}
+button{
+    justify-self: center;
+}

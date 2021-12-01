@@ -1,4 +1,4 @@
-import { List } from "./lib/module";
+import { List } from "./lib/module.js";
 //une petite importotation pour utiliser la notion de classe.
 
 //instaciation des variables dont on aura besoin plustard.
@@ -16,7 +16,7 @@ const arraylabel = new List();
 //écoute sur l'élément input d'ID 'int'
 inputAccount.addEventListener("change", function (e) {
   if ((e.target.value.length = 5)) {
-      //récupération de la valeur courante dans la liste d'une instance de la classe List
+    //récupération de la valeur courante dans la liste d'une instance de la classe List
     arrayinput.addElementToList(e.target.value);
   }
   //stockage des valeurs dans le local storage pour un accés plus facile
@@ -38,9 +38,9 @@ combobox.addEventListener("change", function (g) {
 });
 // écoute sur l'élément button.
 buttonAccount.addEventListener("click", function () {
-    //transformation des valeurs du local storage pour pouvoir les stocker dans
-    //un tableau et y facilitait l'accés sans qu'il ne se transforme en une seule
-    //chaine de caractéres.
+  //transformation des valeurs du local storage pour pouvoir les stocker dans
+  //un tableau et y facilitait l'accés sans qu'il ne se transforme en une seule
+  //chaine de caractéres.
   tableau1 = window.localStorage.comptes.split(",");
   tableau2 = window.localStorage.label.split(",");
   tableau3 = window.localStorage.combobox.split(",");
@@ -55,12 +55,12 @@ buttonAccount.addEventListener("click", function () {
     tableau2[rowcount - 1] &&
     tableau3[rowcount - 1]
   ) {
-      //création d'une ligne et de ses cellules 
+    //création d'une ligne et de ses cellules 
     let row = table.insertRow(-1);
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
-//isertion des valeurs à un index donné dans les cellules
+    //isertion des valeurs à un index donné dans les cellules
     cell1.textContent = tableau1[rowcount - 1];
     cell2.textContent = tableau2[rowcount - 1];
     cell3.textContent = tableau3[rowcount - 1];
