@@ -1,4 +1,4 @@
-import { List } from "./lib/module.js"
+
 
 
 const inputAccount = document.querySelector('#int');

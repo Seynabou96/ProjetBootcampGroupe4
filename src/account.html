@@ -1,72 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/account.css">
-</head>
+    <link rel="stylesheet" href="./css/account.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <fieldset class="field">
-            <legend>Menu</legend>
-            <div class="menu">
-                <p class="navv"><a href="./account.html"> Management Account</a></p>
-                <p class="navv"><a href="./log.html">Management Transaction</a></p>
-                <p class="navv"><a href="./states.html">Edit Account</a></p>
-            </div>
-        </fieldset>
-        <div class="contenu">
-            <div class="head">
-                <center>
-                    <h1 class="titre">Account System</h1>
-                </center>
-            </div>
-            <div class="inserer">
-                <div>
-                    <fieldset>
-                        <legend>Account</legend>
-                        <form action="" onsubmit="return false">
-                            <label for="int">Code :</label>
-                            <input type="tel" id="int" name="int" required>
-
-                            <label for="label">Label :</label>
-                            <input type="text" id="label" name="label" required>
-
-                            <label for="ComboBox">Class :</label>
-                            <select name="class" id="ComboBox" required>
-                                <option value="">--Please choose an option--</option>
-                                <option value="capitaux">1 capitaux</option>
-                                <option value="immobilisation">2 immobilisation</option>
-                                <option value="stock">3 stock</option>
-                                <option value="tiers">4 tiers</option>
-                                <option value="trésorerie">5 trésorerie</option>
-                                <option value="charge">6 charge</option>
-                            </select>
-                        </form>
-                    </fieldset>
-                </div>
-                <div>
-                    <button id="btn">add</button>
-                </div>
-            </div>
-            <div class="tab">
-                <table id="tbl" border="2px">
-                    <tr>
-                        <th>Code</th>
-                        <th>Label</th>
-                        <th>Classe</th>
-                    </tr>
-                </table>
-            </div>
+      <fieldset class="field">
+        <legend>Menu</legend>
+        <div class="menu">
+          <p class="navv"><a href="./account.html"> Management Account</a></p>
+          <p class="navv"><a href="./log.html">Management Transaction</a></p>
+          <p class="navv"><a href="./states.html">Edit Account</a></p>
         </div>
+      </fieldset>
+      <div class="contenu">
+        <div class="head">
+          <center>
+            <h1 class="titre">Account System</h1>
+          </center>
+        </div>
+        <div class="inserer">
+          <div>
+            <fieldset>
+              <legend>Account</legend>
+              <form action="" onsubmit="return false">
+                <label for="int">Code :</label>
+                <input type="tel" id="int" name="int" required />
+
+                <label for="label">Label :</label>
+                <input type="text" id="label" name="label" required />
+
+                <label for="ComboBox">Class :</label>
+                <select name="class" id="ComboBox" required>
+                  <option value="combobox">Combobox</option>
+                  <option value="capitaux">1 capitaux</option>
+                  <option value="immobilisation">2 immobilisation</option>
+                  <option value="stock">3 stock</option>
+                  <option value="tiers">4 tiers</option>
+                  <option value="trésorerie">5 trésorerie</option>
+                  <option value="charge">6 charge</option>
+                </select>
+              </form>
+            </fieldset>
+          </div>
+          <div>
+            <button id="btn">add</button>
+          </div>
+        </div>
+        <div class="tab">
+          <table id="tbl" border="2px">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Label</th>
+                <th>Classe</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
     <div class="toolbar">
-        <footer></footer>
+      <footer></footer>
     </div>
     <script src="./js/account.js" type="module"></script>
-</body>
+  </body>
 </html>
