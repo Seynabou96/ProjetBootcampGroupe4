@@ -1,0 +1,64 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+/* Partie menu navigation partager */
+.field{
+    margin-top: 10vh;
+    height: 90vh;
+    width: auto;
+}
+.navv > a {
+    text-decoration: none;
+    color: black;
+}
+.navv > a:visited{
+    color: rgb(179, 233, 233);
+}
+.navv > a:hover{
+    background-color : rgb(22, 119, 119);
+}
+.navv > a:active{
+    color: blue;
+}
+.nav{
+    list-style: none;
+}
+
+/* Page account only */
+/*  */
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenu{
+    display: flex;
+    width: calc(100% - 200px);
+    flex-direction: column;
+
+}
+.inserer{
+    border: 2px solid red;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+.inserer > fieldset{
+    margin: auto;
+}
+/* Bouton de Validation */
+.add{
+    zoom: 0.1;
+}
+.add:hover{
+    background-color: rgba(0, 195, 255, 0.336);
+}
+.add:active{
+    background-color: rgba(0, 255, 255, 0.301);
+}

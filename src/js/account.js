@@ -1,7 +1,7 @@
 import { List } from "./lib/module.js";
 //une petite importotation pour utiliser la notion de classe.
 
-//instaciation des variables dont on aura besoin plustard.
+//instanciation des variables dont on aura besoin plustard.
 const inputAccount = document.querySelector("#int");
 const buttonAccount = document.querySelector("#btn");
 const input = document.querySelector("#label");
@@ -19,28 +19,30 @@ inputAccount.addEventListener("change", function (e) {
     //récupération de la valeur courante dans la liste d'une instance de la classe List
     arrayinput.addElementToList(e.target.value);
   }
-  //stockage des valeurs dans le local storage pour un accés plus facile
-  window.localStorage.comptes = arrayinput._list;
 });
 //écoute sur l'élément input d'ID 'label'
 input.addEventListener("change", function (f) {
   if (f.target.value !== null) {
     arraylabel.addElementToList(f.target.value);
   }
-  window.localStorage.label = arraylabel._list;
 });
 //écoute sur l'élément select d'ID 'ComboBox'
 combobox.addEventListener("change", function (g) {
   if (g.target.value !== null) {
     arraycombobox.addElementToList(g.target.value);
   }
-  window.localStorage.combobox = arraycombobox._list;
 });
 // écoute sur l'élément button.
 buttonAccount.addEventListener("click", function () {
   //transformation des valeurs du local storage pour pouvoir les stocker dans
   //un tableau et y facilitait l'accés sans qu'il ne se transforme en une seule
   //chaine de caractéres.
+
+  //stockage des valeurs dans le local storage pour un accés plus facile
+  window.localStorage.comptes = arrayinput._list;
+  window.localStorage.label = arraylabel._list;
+  window.localStorage.combobox = arraycombobox._list;
+
   tableau1 = window.localStorage.comptes.split(",");
   tableau2 = window.localStorage.label.split(",");
   tableau3 = window.localStorage.combobox.split(",");

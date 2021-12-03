@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Transaction</title>
+    <link rel="stylesheet" href="./css/log.css">
+</head>
+
+<body>
+    <div class="container">
+        <fieldset class="field">
+            <legend>Menu</legend>
+            <div class="menu">
+                <p class="navv"><a href="./account.html"> Management Account</a></p>
+                <p class="navv"><a href="./log.html">Management Transaction</a></p>
+                <p class="navv"><a href="./states.html">Edit Account</a></p>
+            </div>
+        </fieldset>
+        <div class="contenu">
+            <div class="head">
+                <center>
+                    <h1 class="titre">Management Transaction</h1>
+                </center>
+            </div>
+            <div class="inserer">
+                <div>
+                    <fieldset>
+                        <legend>Transaction</legend>
+                        <form action="" onsubmit="return false">
+                            <dvi class="blckInpUn">
+                                <label for="date">Transaction Date :</label>
+                                <input type="date" id="datLog" name="datLog">
+                                <label for="TrqnsObject">Transaction Objet :</label>
+                                <input type="text" id="transLog" name="transLog">
+                            </dvi>
+                            <div class="blckInpDeux">
+                                <label for="code">code:</label>
+                                <input type="number" id="codeLog" name="codeLog">
+                                <label for="label">Label :</label>
+                                <input type="text" id="labelLog" name="labelLog">
+                                <label for="debit">Debit :</label>
+                                <input type="number" id="debitLog" name="debitLog">
+                                <label for="credit">Crédit :</label>
+                                <input type="number" id="creditLog" name="creditLog">
+                            </div>
+                            <div class="blckInpDeux">
+                                <label for="code">code:</label>
+                                <input type="number" id="codeLogdeux" name="codeLogdeux">
+                                <label for="label">Label :</label>
+                                <input type="text" id="labelLogdeux" name="labelLogdeux">
+                                <label for="debit">Debit :</label>
+                                <input type="number" id="debitLogdeux" name="debitLogdeux">
+                                <label for="credit">Crédit :</label>
+                                <input type="number" id="creditLogdeux" name="creditLogdeux">
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+                <div>
+                    <input type="image" src="./img/plusNoir.png" class="add" alt="">
+                </div>
+            </div>
+            <div class="tab">
+                <table id="tbl" border="2px">
+                    <tr>
+                        <th>Transaction Code</th>
+                        <th>Account Code(Débit)</th>
+                        <th>Account Code(Crédit)</th>
+                        <th>Transaction Objet</th>
+                        <th>Débit</th>
+                        <th>Crédit</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="toolbar">
+        <footer></footer>
+    </div>
+    <script src="./test.js" type="module"></script>
+</body>
+
+</html>
