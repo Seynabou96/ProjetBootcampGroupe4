@@ -43,6 +43,11 @@ body{
     flex-direction: column;
 
 }
+
+/* Le titre Account System */
+/* .head{
+} */
+/* Parti concernannt fielset Account et le bouton de validation */
 .inserer{
     border: 2px solid red;
     flex-direction: row;
@@ -53,7 +58,18 @@ body{
 .inserer > fieldset{
     margin: auto;
 }
+
+/* Partie du tableau */
+.tab{
+    height: inherit;
+    border: 2px solid green;
+}
+
+
+
+/*  */
 /* Bouton de Validation */
+
 .add{
     background-color: black;
     border-radius: 5px;

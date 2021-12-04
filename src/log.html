@@ -26,61 +26,64 @@
                 </center>
             </div>
             <div class="inserer">
-                <div>
-                    <fieldset>
-                        <legend>Transaction</legend>
-                        <form action="" onsubmit="return false">
-                            <dvi class="blckInpUn">
-                                <label for="date">Transaction Date :</label>
-                                <input type="date" id="datLog" name="datLog">
-                                <label for="TrqnsObject">Transaction Objet :</label>
-                                <input type="text" id="transLog" name="transLog">
-                            </dvi>
+                <form action="" onsubmit="return false">
+                    <div>
+                        <fieldset>
+                            <legend>Transaction</legend>
+                            <div class="blckInpUn">
+                                <label for="dateLog">Transaction Date :</label>
+                                <input type="date" required id="datLog" name="datLog" value="2021-07-22"
+                                    min="2021-01-01" max="2021-12-31">
+                                <label for="TransLog">Transaction Objet :</label>
+                                <input type="text" id="transLog" name="transLog" required>
+                            </div>
                             <div class="blckInpDeux">
-                                <label for="code">code:</label>
+                                <label for="codeLog">code:</label>
                                 <input type="number" id="codeLog" name="codeLog">
-                                <label for="label">Label :</label>
-                                <input type="text" id="labelLog" name="labelLog">
-                                <label for="debit">Debit :</label>
+                                <label for="labelLog">Label :</label>
+                                <input type="text" id="labelLog" name="labelLog" max="20" min="4">
+                                <label for="debitLog">Debit :</label>
                                 <input type="number" id="debitLog" name="debitLog">
-                                <label for="credit">Crédit :</label>
+                                <label for="creditLog">Crédit :</label>
                                 <input type="number" id="creditLog" name="creditLog">
                             </div>
                             <div class="blckInpDeux">
-                                <label for="code">code:</label>
+                                <label for="codeLogdeux">code:</label>
                                 <input type="number" id="codeLogdeux" name="codeLogdeux">
-                                <label for="label">Label :</label>
+                                <label for="labelLogdeux">Label :</label>
                                 <input type="text" id="labelLogdeux" name="labelLogdeux">
-                                <label for="debit">Debit :</label>
+                                <label for="debitLogdeux">Debit :</label>
                                 <input type="number" id="debitLogdeux" name="debitLogdeux">
-                                <label for="credit">Crédit :</label>
+                                <label for="creditLogdeux">Crédit :</label>
                                 <input type="number" id="creditLogdeux" name="creditLogdeux">
                             </div>
-                        </form>
-                    </fieldset>
-                </div>
-                <div>
-                    <input type="image" src="./img/plusNoir.png" class="add" alt="">
-                </div>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <input type="button" value="Add" class="add" id="btn">
+                    </div>
+                </form>
             </div>
-            <div class="tab">
-                <table id="tbl" border="2px">
-                    <tr>
-                        <th>Transaction Code</th>
-                        <th>Account Code(Débit)</th>
-                        <th>Account Code(Crédit)</th>
-                        <th>Transaction Objet</th>
-                        <th>Débit</th>
-                        <th>Crédit</th>
-                    </tr>
-                </table>
-            </div>
+
         </div>
+        <div class="tab">
+            <table id="tbl" border="2px">
+                <tr>
+                    <th>Transaction Code</th>
+                    <th>Account Code(Débit)</th>
+                    <th>Account Code(Crédit)</th>
+                    <th>Transaction Objet</th>
+                    <th>Débit</th>
+                    <th>Crédit</th>
+                </tr>
+            </table>
+        </div>
+    </div>
     </div>
     <div class="toolbar">
         <footer></footer>
     </div>
-    <script src="./test.js" type="module"></script>
+    <script src="./js/log.js" type="module"></script>
 </body>
 
 </html>

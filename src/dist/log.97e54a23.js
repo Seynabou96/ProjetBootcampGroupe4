@@ -140,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"h6W3G":[function(require,module,exports) {
+})({"6ccRf":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "4a236f9275d0a351";
-module.bundle.HMR_BUNDLE_ID = "8dfa704575c12daf";
+module.bundle.HMR_BUNDLE_ID = "db23590f97e54a23";
 "use strict";
 function _createForOfIteratorHelper(o, allowArrayLike) {
     var it;
@@ -458,8 +458,111 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"5eufZ":[function(require,module,exports) {
+},{}],"gMmn3":[function(require,module,exports) {
+// //une petite importotation pour utiliser la notion de classe.
+var _module = require("./lib/module");
+const TransactionDate = document.querySelector('#datLog');
+const TransactionObjet = document.querySelector('#transLog');
+const code1 = document.querySelector('#codeLog');
+const label1 = document.querySelector('#labelLog');
+const debit1 = document.querySelector('#debitLog');
+const credit1 = document.querySelector('#creditLog');
+const code2 = document.querySelector('#codeLogdeux');
+const label2 = document.querySelector('#labelLogdeux');
+const credit2 = document.querySelector('#debitLogdeux');
+const debit2 = document.querySelector('#creditLogdeux');
+const button = document.querySelector('#btn');
+// Vérification de chaque élément
+// console.log(TransactionDate,TransactionObjet,code1,code2,label1)
+// console.log(label2,credit1,credit2,debit1,debit2)
+//instances
+const trsDate = new _module.List();
+const trsObjet = new _module.List();
+const codeUn = new _module.List();
+const codeDeux = new _module.List();
+const labelUn = new _module.List();
+const labelDeux = new _module.List();
+const creditUn = new _module.List();
+const creditDeux = new _module.List();
+const debitUn = new _module.List();
+const debitDeux = new _module.List();
+//écoute des événements sur chaque élément
+_module.onChange(TransactionDate, trsDate);
+_module.onChange(TransactionObjet, trsObjet);
+_module.onChange(code1, codeUn);
+_module.onChange(label1, labelUn);
+_module.onChange(debit1, debitUn);
+_module.onChange(credit1, creditUn);
+_module.onChange(code2, codeDeux);
+_module.onChange(label2, labelDeux);
+_module.onChange(debit2, debitDeux);
+_module.onChange(credit2, creditDeux);
+const table = document.querySelector('#tbl');
+let rouncount = table.rows.length;
+let ro = 0;
+button.addEventListener('click', ()=>{
+    let tab1 = trsDate._list[ro];
+    let tab2 = trsObjet._list[ro];
+    if (tab2) console.log("c'e0st ok");
+    else console.log("try again");
+});
 
-},{}]},["h6W3G","5eufZ"], "5eufZ", "parcelRequire94c2")
+},{"./lib/module":"6miBv"}],"6miBv":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "List", ()=>List
+);
+parcelHelpers.export(exports, "onChange", ()=>onChange
+);
+class List {
+    _list = [];
+    // Command
+    addElementToList(element) {
+        this._list.push(element);
+    }
+    removeElement(_list, i) {
+        //this._list.filter(element=>element.id !== id)
+        this._list.splice(i, 1);
+    //this._list.filter(element=> {return element !== value})
+    }
+}
+function onChange(event, tableau) {
+    event.addEventListener('change', function(e) {
+        tableau.addElementToList(e.target.value);
+        console.log(tableau);
+    });
+}
 
-//# sourceMappingURL=ProjetBootcampGroupe4.75c12daf.js.map
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"900u0"}],"900u0":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}]},["6ccRf","gMmn3"], "gMmn3", "parcelRequire94c2")
+
+//# sourceMappingURL=log.97e54a23.js.map

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Account</title>
+    <link rel="stylesheet" href="./css/states.css" />
+</head>
+
+<body>
+    <div class="container">
+        <fieldset class="field">
+            <legend>Menu</legend>
+            <div class="menu">
+                <p class="navv"><a href="./account.html"> Management Account</a></p>
+                <p class="navv"><a href="./log.html">Management Transaction</a></p>
+                <p class="navv"><a href="./states.html">Edit Account</a></p>
+            </div>
+        </fieldset>
+        <div class="contenu">
+            <div class="head">
+                <center>
+                    <h1 class="titre">Edit Account</h1>
+                </center>
+            </div>
+            <div class="inserer">
+                <form action="" onsubmit="return false">
+                    <div>
+                        <fieldset>
+                            <legend>Account</legend>
+                            <label for="fdate">First Date :</label>
+                            <input type="date" id="fdate" name="fdate" required />
+                            <label for="ldate">Last Date:</label>
+                            <input type="date" id="ldate" name="ldate" required />
+                            <label for="ComboBox">Account :</label>
+                            <select name="class" id="ComboBox" required>
+                                <option value="combobox">Combobox</option>
+                                <option value="capitaux">1 capitaux</option>
+                                <option value="immobilisation">2 immobilisation</option>
+                                <option value="stock">3 stock</option>
+                                <option value="tiers">4 tiers</option>
+                                <option value="trésorerie">5 trésorerie</option>
+                                <option value="charge">6 charge</option>
+                            </select>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <input type="button" value="Add" class="add" id="btn">
+                    </div>
+                </form>
+            </div>
+            <div class="tab">
+                <table id="tbl" border="2px">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Transaction Label</th>
+                            <th>Debit</th>
+                            <th>Credit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <footer>&copy; DEIVIED | SEYNABOOOO </footer>
+    </div>
+    <script src="./js/states.js" type="module"></script>
+</body>
+
+</html>

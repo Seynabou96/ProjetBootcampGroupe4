@@ -1,31 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journal</title>
-    <link rel="stylesheet" href="/index.1f934c65.css">
+    <title>Manage Transaction</title>
+    <link rel="stylesheet" href="/log.ff8a8fb3.css">
 </head>
+
 <body>
-    <div class="head">
-        <head><h1>LOG</h1></head>
-    </div>
     <div class="container">
-        <div class="menu">
-            <ul>
-                <li> <a href="/account.html"> Account</a></li>
-                <li>Log</li>
-                <!-- <li> <a href="states.html">States</a> </li> --> 
-            </ul>
-        </div>
+        <fieldset class="field">
+            <legend>Menu</legend>
+            <div class="menu">
+                <p class="navv"><a href="/account.html"> Management Account</a></p>
+                <p class="navv"><a href="/log.html">Management Transaction</a></p>
+                <p class="navv"><a href="/states.html">Edit Account</a></p>
+            </div>
+        </fieldset>
         <div class="contenu">
-    
+            <div class="head">
+                <center>
+                    <h1 class="titre">Management Transaction</h1>
+                </center>
+            </div>
+            <div class="inserer">
+                <div>
+                    <fieldset>
+                        <legend>Transaction</legend>
+                        <form action="" onsubmit="return false">
+                            <dvi class="blckInpUn">
+                                <label for="date">Transaction Date :</label>
+                                <input type="date" required="" id="datLog" name="datLog" value="2021-07-22" min="2021-01-01" max="2021-12-31">
+                                <label for="TrqnsObject">Transaction Objet :</label>
+                                <input type="text" id="transLog" name="transLog" required="">
+                            </dvi>
+                            <div class="blckInpDeux">
+                                <label for="code">code:</label>
+                                <input type="number" id="codeLog" name="codeLog">
+                                <label for="label">Label :</label>
+                                <input type="text" id="labelLog" name="labelLog" max="20" min="4">
+                                <label for="debit">Debit :</label>
+                                <input type="number" id="debitLog" name="debitLog">
+                                <label for="credit">Crédit :</label>
+                                <input type="number" id="creditLog" name="creditLog">
+                            </div>
+                            <div class="blckInpDeux">
+                                <label for="code">code:</label>
+                                <input type="number" id="codeLogdeux" name="codeLogdeux">
+                                <label for="label">Label :</label>
+                                <input type="text" id="labelLogdeux" name="labelLogdeux">
+                                <label for="debit">Debit :</label>
+                                <input type="number" id="debitLogdeux" name="debitLogdeux">
+                                <label for="credit">Crédit :</label>
+                                <input type="number" id="creditLogdeux" name="creditLogdeux">
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+                <div>
+                    <input type="image" src="./img/plusBlue.png" class="add" id="btn" alt="add">
+                </div>
+            </div>
+            <div class="tab">
+                <table id="tbl" border="2px">
+                    <tr>
+                        <th>Transaction Code</th>
+                        <th>Account Code(Débit)</th>
+                        <th>Account Code(Crédit)</th>
+                        <th>Transaction Objet</th>
+                        <th>Débit</th>
+                        <th>Crédit</th>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
     <div class="toolbar">
         <footer></footer>
     </div>
-    <script src="/log.a51ba533.js" defer=""></script>
+    <script src="/log.97e54a23.js" defer=""></script>
 </body>
+
 </html>

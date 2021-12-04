@@ -140,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"h6W3G":[function(require,module,exports) {
+})({"fkAhv":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "4a236f9275d0a351";
-module.bundle.HMR_BUNDLE_ID = "8dfa704575c12daf";
+module.bundle.HMR_BUNDLE_ID = "0e1db779d6b1d565";
 "use strict";
 function _createForOfIteratorHelper(o, allowArrayLike) {
     var it;
@@ -458,8 +458,108 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"5eufZ":[function(require,module,exports) {
+},{}],"g9Vrl":[function(require,module,exports) {
+var _moduleJs = require("./lib/module.js");
+const inputAccount = document.querySelector("#int");
+const buttonAccount = document.querySelector("#btn");
+const inputLabel = document.querySelector("#label");
+const combobox = document.querySelector("#ComboBox");
+const table = document.querySelector('#tbl');
+const tbody = document.querySelector('#tbody');
+const arrayInput = new _moduleJs.List();
+const arrayCombobox = new _moduleJs.List();
+const arrayLabel = new _moduleJs.List();
+let ro = 0;
+_moduleJs.onChange(inputAccount, arrayInput);
+_moduleJs.onChange(inputLabel, arrayLabel);
+_moduleJs.onChange(combobox, arrayCombobox);
+buttonAccount.addEventListener('click', function() {
+    let rowcount = table.rows.length;
+    let tab1 = arrayInput._list[ro];
+    let tab2 = arrayLabel._list[ro];
+    if (tab1 > 10000 && tab1 <= 99999 && tab2 != undefined && arrayCombobox._list[ro] != undefined) {
+        tbody.innerHTML += `<tr>
+        <td>${arrayInput._list[ro]}</td>
+        <td>${arrayLabel._list[ro]}</td>
+        <td>${arrayCombobox._list[ro]}</td>
+      </tr>`;
+        storage1();
+        ro++;
+    } else {
+        arrayInput.removeElement(arrayInput._list, rowcount - 1);
+        arrayLabel.removeElement(arrayLabel._list, rowcount - 1);
+        arrayCombobox.removeElement(arrayCombobox._list, rowcount - 1);
+        alert("veillez nous donnez un code à 5chiffres,un label non vide et un choix");
+    }
+    inputAccount.value = null;
+    inputLabel.value = '';
+    combobox.value = 'combobox';
+});
+function storage1() {
+    window.localStorage.accountsystem = tbody.innerHTML;
+}
+function getValue() {
+    let storage = window.localStorage.accountsystem;
+    if (storage) tbody.innerHTML = storage;
+}
+getValue();
 
-},{}]},["h6W3G","5eufZ"], "5eufZ", "parcelRequire94c2")
+},{"./lib/module.js":"6miBv"}],"6miBv":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "List", ()=>List
+);
+parcelHelpers.export(exports, "onChange", ()=>onChange
+);
+class List {
+    _list = [];
+    // Command
+    addElementToList(element) {
+        this._list.push(element);
+    }
+    removeElement(_list, i) {
+        //this._list.filter(element=>element.id !== id)
+        this._list.splice(i, 1);
+    //this._list.filter(element=> {return element !== value})
+    }
+}
+function onChange(event, tableau) {
+    event.addEventListener('change', function(e) {
+        tableau.addElementToList(e.target.value);
+        console.log(tableau);
+    });
+}
 
-//# sourceMappingURL=ProjetBootcampGroupe4.75c12daf.js.map
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}]},["fkAhv","g9Vrl"], "g9Vrl", "parcelRequire94c2")
+
+//# sourceMappingURL=account.d6b1d565.js.map

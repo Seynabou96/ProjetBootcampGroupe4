@@ -1,83 +1,65 @@
-import { List } from "./lib/module.js";
-//une petite importotation pour utiliser la notion de classe.
+import { List} from './lib/module.js';
+import { onChange } from './lib/module.js';
 
-//instanciation des variables dont on aura besoin plustard.
 const inputAccount = document.querySelector("#int");
 const buttonAccount = document.querySelector("#btn");
-const input = document.querySelector("#label");
+const inputLabel = document.querySelector("#label");
 const combobox = document.querySelector("#ComboBox");
-let tableau1 = [];
-let tableau2 = [];
-let tableau3 = [];
-//déclaration des instances
-const arrayinput = new List();
-const arraycombobox = new List();
-const arraylabel = new List();
-//écoute sur l'élément input d'ID 'int'
-inputAccount.addEventListener("change", function (e) {
-  if ((e.target.value.length = 5)) {
-    //récupération de la valeur courante dans la liste d'une instance de la classe List
-    arrayinput.addElementToList(e.target.value);
-  }
-});
-//écoute sur l'élément input d'ID 'label'
-input.addEventListener("change", function (f) {
-  if (f.target.value !== null) {
-    arraylabel.addElementToList(f.target.value);
-  }
-});
-//écoute sur l'élément select d'ID 'ComboBox'
-combobox.addEventListener("change", function (g) {
-  if (g.target.value !== null) {
-    arraycombobox.addElementToList(g.target.value);
-  }
-});
-// écoute sur l'élément button.
-buttonAccount.addEventListener("click", function () {
-  //transformation des valeurs du local storage pour pouvoir les stocker dans
-  //un tableau et y facilitait l'accés sans qu'il ne se transforme en une seule
-  //chaine de caractéres.
 
-  //stockage des valeurs dans le local storage pour un accés plus facile
-  window.localStorage.comptes = arrayinput._list;
-  window.localStorage.label = arraylabel._list;
-  window.localStorage.combobox = arraycombobox._list;
+const table = document.querySelector('#tbl');
+const tbody = document.querySelector('#tbody');
+const arrayInput = new List();
+const arrayCombobox = new List();
+const arrayLabel = new List();
+let ro = 0;
+  
+  
 
-  tableau1 = window.localStorage.comptes.split(",");
-  tableau2 = window.localStorage.label.split(",");
-  tableau3 = window.localStorage.combobox.split(",");
-  //déclaration de l'élément table 
-  const table = document.querySelector("#tbl");
-  //comptage des lignes du tableau pour l'utiliser comme index puisqu'il sera toujours un nombre
-  let rowcount = table.rows.length;
-  //boucle if pour éviter les répétitions et établir quelques conditions afin que
-  //les données ne soivent pas insérer dans le tableau de maniére désordonnée
-  if (
-    tableau1[rowcount - 1] &&
-    tableau2[rowcount - 1] &&
-    tableau3[rowcount - 1]
-  ) {
-    //création d'une ligne et de ses cellules 
-    let row = table.insertRow(-1);
-    let cell1 = row.insertCell(0);
-    let cell2 = row.insertCell(1);
-    let cell3 = row.insertCell(2);
-    //isertion des valeurs à un index donné dans les cellules
-    cell1.textContent = tableau1[rowcount - 1];
-    cell2.textContent = tableau2[rowcount - 1];
-    cell3.textContent = tableau3[rowcount - 1];
-    //réinitialisation des valeurs pour que le champ required déclaré au niveau
-    //de notre html ne se retrouve pas avec une valeur, créant ainsi un probléme
-    //lors de l'affichage.
-    input.value = "";
-    inputAccount.value = null;
-    combobox.value = null;
+onChange(inputAccount,arrayInput);
+onChange(inputLabel,arrayLabel);
+onChange(combobox,arrayCombobox);
 
-    // else{
-    //     window.localStorage.comptes.splice(rowcount,1);
-    //     window.localStorage.label.splice(rowcount,1);
-    //     .splice(rowcount,1);
-    //    console.log('blem')
-    //}
+buttonAccount.addEventListener('click',function(){
+
+  let rowcount =table.rows.length;
+  let tab1 =arrayInput._list[ro]
+  let tab2 = arrayLabel._list[ro]
+  
+  if((tab1>10000 && tab1<=99999) &&
+    (tab2!=undefined) &&
+(arrayCombobox._list[ro]!=undefined)){
+    tbody.innerHTML +=
+     `<tr>
+        <td>${arrayInput._list[ro]}</td>
+        <td>${arrayLabel._list[ro]}</td>
+        <td>${arrayCombobox._list[ro]}</td>
+      </tr>`
+      storage()
+   ro++;     
   }
-});
+
+  else{
+    arrayInput.removeElement(arrayInput._list,rowcount-1);
+    arrayLabel.removeElement(arrayLabel._list,rowcount-1);
+    arrayCombobox.removeElement(arrayCombobox._list,rowcount-1);
+
+    alert("veillez nous donnez un code à 5chiffres,un label non vide et un choix")
+  }
+  
+  inputAccount.value = null;
+  inputLabel.value = '';
+  combobox.value = 'combobox'
+  
+})
+
+
+function storage(){
+  window.localStorage.accountsystem = tbody.innerHTML;
+}
+function getValue(){
+  let storage = window.localStorage.accountsystem;
+  if(storage){
+    tbody.innerHTML = storage;
+  }
+}
+getValue()

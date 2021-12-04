@@ -12,34 +12,12 @@ export class List{
                this._list.splice(i,1);
                //this._list.filter(element=> {return element !== value})
         }
-    
-    
 
-    updateElement(element){
-       for (myElement in this._list){
-           if(myElement.id === element.id){
-            myElement=element
-           }else{
-               console.log('Error: the element to update not exist in the list')
-           }
-       }
-    }
-
-    sortList(){
-        this._list.sort();
-    }
 }
 
-class TodoList extends List{
-    constructor(){
-        super();
+export function onChange(event,tableau){
+    event.addEventListener('change',function(e){
+    tableau.addElementToList(e.target.value);
+    console.log(tableau)
+  })
     }
-}
-
-class AccountList extends List{
-    constructor(){
-        super();
-    }
-}
-
-

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/account.32d7b620.css">
+    <link rel="stylesheet" href="/account.49c75658.css">
 </head>
 
 <body>
@@ -27,46 +27,55 @@
             </div>
             <div class="inserer">
                 <div>
-                    <fieldset>
-                        <legend>Account</legend>
-                        <form action="" onsubmit="return false">
-                            <label for="int">Code :</label>
-                            <input type="tel" id="int" name="int" required="">
+                    <form action="" onsubmit="return false">
+                        <div>
+                            <fieldset>
+                                <legend>Account</legend>
+                                <label for="int">Code :</label>
+                                <input type="tel" id="int" name="int" required="">
+                                <label for="label">Label :</label>
+                                <input type="text" id="label" name="label" required="">
+                                <label for="ComboBox">Class :</label>
+                                <select name="class" id="ComboBox" required="">
+                                    <option value="combobox">Combobox</option>
+                                    <option value="capitaux">1 capitaux</option>
+                                    <option value="immobilisation">2 immobilisation</option>
+                                    <option value="stock">3 stock</option>
+                                    <option value="tiers">4 tiers</option>
+                                    <option value="trésorerie">5 trésorerie</option>
+                                    <option value="charge">6 charge</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                        <div>
+                            <input type="image" src="./img/plusNoir.png" class="add" id="btn">
+                        </div>
 
-                            <label for="label">Label :</label>
-                            <input type="text" id="label" name="label" required="">
+                    </form>
+                </div>
 
-                            <label for="ComboBox">Class :</label>
-                            <select name="class" id="ComboBox" required="">
-                                <option value="">--Please choose an option--</option>
-                                <option value="capitaux">1 capitaux</option>
-                                <option value="immobilisation">2 immobilisation</option>
-                                <option value="stock">3 stock</option>
-                                <option value="tiers">4 tiers</option>
-                                <option value="trésorerie">5 trésorerie</option>
-                                <option value="charge">6 charge</option>
-                            </select>
-                        </form>
-                    </fieldset>
-                </div>
-                <div>
-                    <button id="btn">add</button>
-                </div>
             </div>
             <div class="tab">
                 <table id="tbl" border="2px">
-                    <tr>
-                        <th>Code</th>
-                        <th>Label</th>
-                        <th>Classe</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Label</th>
+                            <th>Classe</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
+
     <div class="toolbar">
-        <footer></footer>
+        <footer>&copy; DEIVIED | SEYNABOOOO </footer>
     </div>
-    <script src="/account.b10f997f.js" defer=""></script>
+    <script src="/states.d6b1d565.js" defer=""></script>
 </body>
+
 </html>

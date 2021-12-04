@@ -140,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"h6W3G":[function(require,module,exports) {
+})({"l86ac":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "4a236f9275d0a351";
-module.bundle.HMR_BUNDLE_ID = "8dfa704575c12daf";
+module.bundle.HMR_BUNDLE_ID = "ee2445ba5739ab8b";
 "use strict";
 function _createForOfIteratorHelper(o, allowArrayLike) {
     var it;
@@ -458,8 +458,44 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"5eufZ":[function(require,module,exports) {
+},{}],"12Ntn":[function(require,module,exports) {
+const inputAccount = document.querySelector('#int');
+const buttonAccount = document.querySelector('#btn');
+const inputLabel = document.querySelector('#label');
+const combobox = document.querySelector('#ComboBox');
+const table = document.querySelector('#tbl');
+const arrayinput = new List();
+const arraylabel = new List();
+const arraytype = new List();
+buttonAccount.addEventListener('click', function() {
+    let code = inputAccount.value;
+    let label = inputLabel.value;
+    let typeCpt = combobox.value;
+    if (code.length === 4 && label != " " && typeCpt != " ") {
+        arrayinput.addElementToList(code);
+        arraylabel.addElementToList(label);
+        arraytype.addElementToList(typeCpt);
+        console.log(JSON.stringify(arrayinput._list, undefined, 3));
+        window.localStorage.setItem("code", JSON.stringify(arrayinput._list, undefined, 3));
+        window.localStorage.setItem("label", JSON.stringify(arraylabel._list, undefined, 3));
+        window.localStorage.setItem("Type compte", JSON.stringify(arraytype._list, undefined, 3));
+        for(Element in window.localStorage){
+            let row = table.insertRow(-1);
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+            cell1.textContent = window.localStorage.getItem(Element);
+            cell2.textContent = window.localStorage.getItem(Element);
+            cell3.textContent = window.localStorage.getItem(Element);
+        }
+    }
+}); // else{
+ //     window.localStorage.comptes.splice(rowcount,1);
+ //     window.localStorage.label.splice(rowcount,1);
+ //     .splice(rowcount,1);
+ //    console.log('blem')
+ //}
 
-},{}]},["h6W3G","5eufZ"], "5eufZ", "parcelRequire94c2")
+},{}]},["l86ac","12Ntn"], "12Ntn", "parcelRequire94c2")
 
-//# sourceMappingURL=ProjetBootcampGroupe4.75c12daf.js.map
+//# sourceMappingURL=log.5739ab8b.js.map

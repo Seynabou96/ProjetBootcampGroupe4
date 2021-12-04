@@ -34,13 +34,14 @@ body{
 .container{
     display: flex;
     flex-wrap: wrap;
+    background: linear-gradient(90deg, rgba(255, 166, 0, 0.5), rgba(255, 115, 1, 0.5), rgba(245, 245, 44, 0.5) );
 }
 
 .contenu{
     display: flex;
     width: calc(100% - 200px);
     flex-direction: column;
-
+    
 }
 
 /* Le titre Account System */
@@ -48,32 +49,37 @@ body{
 } */
 /* Parti concernannt fielset Account et le bouton de validation */
 .inserer{
-    border: 2px solid red;
-    flex-direction: row;
     align-items: center;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
+}
+.inserer > div{
+    display: flex;
 }
 .inserer > fieldset{
     margin: auto;
 }
+
 /* Bouton de Validation */
 .add{
-    zoom: 0.1;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+
 }
 .add:hover{
-    background-color: rgba(0, 195, 255, 0.336);
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid black;
+
 }
 .add:active{
-    background-color: rgba(0, 255, 255, 0.301);
+    background-color: black;
+    border-radius: 5px;
+    color: white;
 }
-
-/* Partie du tableau */
-.tab{
-    height: inherit;
-    border: 2px solid green;
-}
-
 
 
 /*  */
