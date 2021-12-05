@@ -31,9 +31,9 @@
                         <fieldset>
                             <legend>Account</legend>
                             <label for="fdate">First Date :</label>
-                            <input type="date" id="fdate" name="fdate" required="">
+                            <input type="date" id="fdate" name="fdate" min="2021-01-01" max="2021-12-31">
                             <label for="ldate">Last Date:</label>
-                            <input type="date" id="ldate" name="ldate" required="">
+                            <input type="date" id="ldate" name="ldate" min="2021-01-01" max="2021-12-31">
                             <label for="ComboBox">Account :</label>
                             <select name="class" id="ComboBox" required="">
                                 <option value="combobox">Combobox</option>
@@ -46,8 +46,8 @@
                             </select>
                         </fieldset>
                     </div>
-                    <div class="addimg">
-                        <input type="image" src="./img/plusNoir.png" class="add" id="btn">
+                    <div>
+                        <input type="button" value="Add" class="add" id="btn">
                     </div>
                 </form>
             </div>
@@ -65,13 +65,16 @@
                     </tbody>
                 </table>
             </div>
+            <div id="sommes">
+                <p>totaux débits <span id="somme1"></span></p><br><p>totaux crédits <span id="somme2"></span></p>
+            </div>
         </div>
     </div>
 
     <div class="toolbar">
         <footer>&copy; DEIVIED | SEYNABOOOO </footer>
     </div>
-    <script src="/states.d6b1d565.js" defer=""></script>
+    <script src="/states.0d254ffc.js" defer=""></script>
 </body>
 
 </html>

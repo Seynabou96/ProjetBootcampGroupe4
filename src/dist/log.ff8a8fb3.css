@@ -55,12 +55,21 @@ body{
 }
 /* Bouton de Validation */
 .add{
-    zoom: 0.4;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+
 }
 .add:hover{
-    background-color: rgba(0, 195, 255, 0.336);
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid black;
+
 }
 .add:active{
-    background-color: rgba(0, 255, 255, 0.301);
+    background-color: black;
+    border-radius: 5px;
+    color: white;
 }
 /*# sourceMappingURL=log.ff8a8fb3.css.map */

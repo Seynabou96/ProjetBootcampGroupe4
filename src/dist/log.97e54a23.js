@@ -140,7 +140,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"6ccRf":[function(require,module,exports) {
+})({"bSvDT":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
@@ -459,19 +459,16 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"gMmn3":[function(require,module,exports) {
-// //une petite importotation pour utiliser la notion de classe.
+//une petite importation pour utiliser la notion de classe.
 var _module = require("./lib/module");
-const TransactionDate = document.querySelector('#datLog');
-const TransactionObjet = document.querySelector('#transLog');
-const code1 = document.querySelector('#codeLog');
-const label1 = document.querySelector('#labelLog');
-const debit1 = document.querySelector('#debitLog');
-const credit1 = document.querySelector('#creditLog');
-const code2 = document.querySelector('#codeLogdeux');
-const label2 = document.querySelector('#labelLogdeux');
-const credit2 = document.querySelector('#debitLogdeux');
-const debit2 = document.querySelector('#creditLogdeux');
-const button = document.querySelector('#btn');
+//Affectations
+const TransactionDate = document.querySelector("#datLog");
+const TransactionObjet = document.querySelector("#transLog");
+const code1 = document.querySelector("#codeLog");
+const debit1 = document.querySelector("#debitLog");
+const credit1 = document.querySelector("#creditLog");
+const code2 = document.querySelector("#codeLogdeux");
+const button = document.querySelector("#btn");
 // Vérification de chaque élément
 // console.log(TransactionDate,TransactionObjet,code1,code2,label1)
 // console.log(label2,credit1,credit2,debit1,debit2)
@@ -480,32 +477,132 @@ const trsDate = new _module.List();
 const trsObjet = new _module.List();
 const codeUn = new _module.List();
 const codeDeux = new _module.List();
-const labelUn = new _module.List();
-const labelDeux = new _module.List();
+const stockdate1 = new _module.List();
 const creditUn = new _module.List();
-const creditDeux = new _module.List();
+const stockdate2 = new _module.List();
+const stockobjet = new _module.List();
+const stockobjet1 = new _module.List();
 const debitUn = new _module.List();
-const debitDeux = new _module.List();
+const debit = new _module.List();
+const credit = new _module.List();
+const p1 = document.querySelector('#somme1');
+const p2 = document.querySelector('#somme2');
 //écoute des événements sur chaque élément
 _module.onChange(TransactionDate, trsDate);
 _module.onChange(TransactionObjet, trsObjet);
 _module.onChange(code1, codeUn);
-_module.onChange(label1, labelUn);
 _module.onChange(debit1, debitUn);
 _module.onChange(credit1, creditUn);
 _module.onChange(code2, codeDeux);
-_module.onChange(label2, labelDeux);
-_module.onChange(debit2, debitDeux);
-_module.onChange(credit2, creditDeux);
-const table = document.querySelector('#tbl');
+//affectations pour les indexes
+const table = document.querySelector("#tbl");
 let rouncount = table.rows.length;
 let ro = 0;
-button.addEventListener('click', ()=>{
+let roo = 0;
+let rooo = 0;
+let totauxcredit = 0;
+let totauxdebit = 0;
+let tab0 = trsDate._list.pop();
+let arrayDate = new _module.List();
+arrayDate.addElementToList(tab0);
+const tbody = document.querySelector("#tbody");
+button.addEventListener("click", ()=>{
+    //affectations pour récupérer chaque élément à la meme enseigne 
     let tab1 = trsDate._list[ro];
     let tab2 = trsObjet._list[ro];
-    if (tab2) console.log("c'e0st ok");
-    else console.log("try again");
+    let tab3 = codeUn._list[roo];
+    let tab4 = debitUn._list[roo];
+    let tab5 = creditUn._list[rooo];
+    let tab6 = codeDeux._list[rooo];
+    console.log(tab1, tab2, tab3, tab4, tab5, tab6);
+    //boucle pour les conditions
+    if (tab1 && tab2 && tab3 && tab4) {
+        tbody.innerHTML += `
+      <tr>
+      <td>${trsDate._list[ro]}</td>
+      <td>${codeUn._list[roo]}</td>      
+      <td></td>
+      <td>${trsObjet._list[ro]}</td>
+      <td>${debitUn._list[roo]}</td>
+      <td></td>
+      </tr>
+    `;
+        debit.addElementToList(debitUn._list[roo]);
+        stockdate1.addElementToList(trsDate._list[ro]);
+        stockobjet.addElementToList(trsObjet._list[ro]);
+        p1.innerHTML = `${totauxdebit = totauxdebit + parseInt(tab4)}`;
+        storage1();
+        ro++;
+        roo++;
+    } else if (tab1 && tab2 && tab5 && tab6) {
+        tbody.innerHTML += `
+      <tr>
+      <td>${trsDate._list[ro]}</td>
+      <td></td>      
+      <td>${codeDeux._list[rooo]}</td>
+      <td>${trsObjet._list[ro]}</td>
+      <td></td>
+      <td>${creditUn._list[rooo]}</td>
+      </tr>
+    `;
+        credit.addElementToList(creditUn._list);
+        stockdate2.addElementToList(trsDate._list);
+        stockobjet1.addElementToList(trsObjet._list);
+        p2.innerHTML = `${totauxcredit = totauxcredit + parseInt(tab5)}`;
+        storage1();
+        ro++;
+        rooo++;
+    } else {
+        trsDate._list.splice(ro, 2);
+        trsObjet.removeElement(trsObjet._list, ro);
+        codeUn.removeElement(codeUn._list, roo);
+        codeDeux.removeElement(codeDeux._list, rooo);
+        debitUn.removeElement(debitUn._list, roo);
+        creditUn.removeElement(creditUn._list, rooo);
+        // console.log('je suis la date'+trsDate._list)
+        // console.log("je suis l'objet"+trsObjet._list)
+        // console.log("je suis le code un"+codeUn._list)
+        // console.log("je suis le debit"+debitUn._list)
+        // console.log("je suis le code deux"+codeDeux._list)
+        // console.log("je suis le credit"+creditUn._list)
+        alert(`veuillez svp renseignez les champs comme suite : 
+      date-objet-code-débit ou
+      date-objet-code-crédit
+    `);
+    }
+    //remise à 0 des champs
+    TransactionDate.value = "";
+    TransactionObjet.value = "";
+    code1.value = "";
+    code2.value = "";
+    debit1.value = "";
+    credit1.value = "";
 });
+//fonction de stockage
+function storage1() {
+    window.localStorage.log = tbody.innerHTML;
+    window.localStorage.calculd = p1.innerHTML;
+    window.localStorage.calculc = p2.innerHTML;
+    window.localStorage.stockdate1 = stockdate1._list;
+    window.localStorage.stockdate2 = stockdate2._list;
+    window.localStorage.label1 = stockobjet._list;
+    window.localStorage.label2 = stockobjet1._list;
+    window.localStorage.credit = credit._list;
+    window.localStorage.debit = debit._list;
+}
+//fonction pour assurer la persistance
+function getValue() {
+    let storage = window.localStorage.log;
+    let calculd = window.localStorage.calculd;
+    let calculc = window.localStorage.calculc;
+    if (storage) tbody.innerHTML = storage;
+    if (calculc && calculd) {
+        p1.innerHTML = calculd;
+        p2.innerHTML = calculc;
+    }
+}
+//appel de la fonction
+getValue();
 
 },{"./lib/module":"6miBv"}],"6miBv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -533,7 +630,7 @@ function onChange(event, tableau) {
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"900u0"}],"900u0":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -563,6 +660,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["6ccRf","gMmn3"], "gMmn3", "parcelRequire94c2")
+},{}]},["bSvDT","gMmn3"], "gMmn3", "parcelRequire94c2")
 
 //# sourceMappingURL=log.97e54a23.js.map
